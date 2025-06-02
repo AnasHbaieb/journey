@@ -1,7 +1,6 @@
 import type { JourneyStep } from "../../../data/mockdata"
 import MediaCard from "./MediaCard"
 import ToDoBlock from "./ToDoBlock"
-import { Hash } from "lucide-react"
 
 interface TimelineProps {
   journey: JourneyStep[]

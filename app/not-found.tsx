@@ -10,7 +10,7 @@ export default function NotFound() {
         <div className="mb-8">
           <h1 className="text-6xl font-bold text-gray-300 mb-4">404</h1>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Expert Not Found</h2>
-          <p className="text-gray-600 mb-8">The expert journey you're looking for doesn't exist or has been moved.</p>
+          <p className="text-gray-600 mb-8">The expert journey you are looking for does not exist or has been moved.</p>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
