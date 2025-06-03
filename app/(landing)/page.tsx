@@ -5,79 +5,79 @@ import { ArrowRight, Users, Star, Globe, Award } from "lucide-react"
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 pt-24 pb-32">
-        <div className="text-center mb-24">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gray-50 rounded-full text-gray-900 font-medium text-sm mb-8">
+      <section className="container mx-auto px-4 pt-32 pb-40">
+        <div className="text-center mb-32">
+          <div className="inline-flex items-center gap-2 px-8 py-4 bg-black/5 rounded-2xl text-black font-medium text-sm mb-12 hover:bg-black/10 transition-colors">
             <Users className="w-4 h-4" />
             <span>Featuring {experts.length} Industry Leaders</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 tracking-tight">
+          <h1 className="text-6xl md:text-7xl font-bold text-black mb-10 tracking-tight">
             Learn from Tech
-            <span className="text-gray-900 relative">
+            <span className="text-black relative inline-block">
               {" "}Pioneers
-              <div className="absolute bottom-2 left-0 w-full h-3 bg-blue-100 -z-10"></div>
+              <div className="absolute bottom-2 left-0 w-full h-4 bg-blue-100/50 -z-10 transform -rotate-1"></div>
             </span>
           </h1>
-          <p className="text-xl text-gray-800 max-w-2xl mx-auto mb-14 leading-relaxed">
+          <p className="text-xl text-black/80 max-w-2xl mx-auto mb-16 leading-relaxed">
             Discover the journeys, challenges, and triumphs of industry experts who have shaped the future of technology.
           </p>
           
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
-            <div className="flex items-center gap-2 px-6 py-3 bg-gray-50 rounded-full shadow-sm">
-              <Star className="w-4 h-4 text-gray-900" />
-              <span className="text-gray-900 font-medium">Real Experiences</span>
+            <div className="flex items-center gap-3 px-8 py-4 bg-black/5 rounded-2xl hover:bg-black/10 transition-all">
+              <Star className="w-4 h-4 text-black" />
+              <span className="text-black font-medium">Real Experiences</span>
             </div>
-            <div className="flex items-center gap-2 px-6 py-3 bg-gray-50 rounded-full shadow-sm">
-              <Globe className="w-4 h-4 text-gray-900" />
-              <span className="text-gray-900 font-medium">Global Impact</span>
+            <div className="flex items-center gap-3 px-8 py-4 bg-black/5 rounded-2xl hover:bg-black/10 transition-all">
+              <Globe className="w-4 h-4 text-black" />
+              <span className="text-black font-medium">Global Impact</span>
             </div>
-            <div className="flex items-center gap-2 px-6 py-3 bg-gray-50 rounded-full shadow-sm">
-              <Award className="w-4 h-4 text-gray-900" />
-              <span className="text-gray-900 font-medium">Industry Leaders</span>
+            <div className="flex items-center gap-3 px-8 py-4 bg-black/5 rounded-2xl hover:bg-black/10 transition-all">
+              <Award className="w-4 h-4 text-black" />
+              <span className="text-black font-medium">Industry Leaders</span>
             </div>
           </div>
         </div>
 
         {/* Expert Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-7xl mx-auto">
           {experts.map((expert) => (
             <Link
               key={expert.id}
               href={`/journey/${expert.slug}`}
-              className="group relative bg-white rounded-xl p-8 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300"
+              className="group relative bg-white rounded-3xl p-10 hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all duration-300"
             >
               <div className="relative">
                 {/* Expert Image */}
-                <div className="relative w-32 h-32 mx-auto mb-8">
-                  <div className="absolute inset-0 bg-gray-100 rounded-xl rotate-6 group-hover:rotate-12 transition-transform" />
+                <div className="relative w-40 h-40 mx-auto mb-10">
+                  <div className="absolute inset-0 bg-black/5 rounded-3xl rotate-6 group-hover:rotate-12 transition-transform duration-300" />
                   <Image
                     src={expert.photo || "/placeholder.svg"}
                     alt={expert.name}
-                    width={128}
-                    height={128}
-                    className="relative w-full h-full object-cover rounded-xl"
+                    width={160}
+                    height={160}
+                    className="relative w-full h-full object-cover rounded-3xl shadow-lg"
                   />
                 </div>
 
                 {/* Expert Info */}
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-2xl font-bold text-black mb-3">
                     {expert.name}
                   </h3>
 
-                  <p className="text-gray-900 font-medium mb-5">{expert.title}</p>
+                  <p className="text-black font-medium mb-6">{expert.title}</p>
 
-                  <p className="text-gray-700 text-sm mb-8 line-clamp-3">{expert.about}</p>
+                  <p className="text-black/70 text-sm mb-8 line-clamp-3">{expert.about}</p>
 
                   {/* Achievements Preview */}
-                  <div className="flex flex-wrap justify-center gap-3 mb-8">
+                  <div className="flex flex-wrap justify-center gap-3 mb-10">
                     {expert.achievements.slice(0, 2).map((achievement, index) => (
                       <span
                         key={index}
-                        className="px-4 py-2 bg-gray-50 text-gray-900 text-sm font-medium rounded-full"
+                        className="px-6 py-3 bg-black/5 text-black text-sm font-medium rounded-2xl"
                       >
                         {achievement.split(" ")[0]}
                       </span>
@@ -85,7 +85,7 @@ export default function LandingPage() {
                   </div>
 
                   {/* View Journey Button */}
-                  <div className="inline-flex items-center gap-2 text-gray-900 font-medium group-hover:gap-3 transition-all">
+                  <div className="inline-flex items-center gap-2 text-black font-medium group-hover:gap-3 transition-all">
                     <span>View Journey</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
@@ -97,15 +97,15 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative bg-gray-950 py-24">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,.2)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]" />
+      <section className="relative bg-black py-32">
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]" />
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-white mb-6">Ready to Start Your Own Journey?</h2>
-            <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+            <h2 className="text-4xl font-bold text-white mb-8">Ready to Start Your Own Journey?</h2>
+            <p className="text-xl text-white/80 mb-12 leading-relaxed">
               Join thousands of professionals who are learning from expert experiences and accelerating their career growth.
             </p>
-            <button className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors">
+            <button className="bg-white text-black px-10 py-5 rounded-2xl font-semibold hover:bg-gray-50 transition-colors">
               Get Started Today
             </button>
           </div>
