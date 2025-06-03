@@ -17,7 +17,7 @@ export default function WhyChooseExpertJourney() {
             </div>
             <h3 className="text-xl font-bold text-white mb-2">Real Inspiration</h3>
             <p className="text-gray-400 text-sm">
-              Discover real-life experiences and lessons learned from experts' journeys, challenges, and triumphs.
+              Discover real-life experiences and lessons learned from experts journeys, challenges, and triumphs.
             </p>
           </div>
 
