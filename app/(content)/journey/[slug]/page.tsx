@@ -7,7 +7,7 @@ import Timeline from "../components/Timeline"
 import Footer from "../components/Footer"
 
 interface PageProps {
-  params: Promise<{ slug: string }>
+  params: { slug: string }
 }
 
 // Generate static params for all expert slugs
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params
+  const { slug } = params
   const expert = getExpertBySlug(slug)
 
   if (!expert) {
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default async function ExpertJourneyPage({ params }: PageProps) {
-  const { slug } = await params
+  const { slug } = params
   const expert = getExpertBySlug(slug)
 
   if (!expert) {
