@@ -1,4 +1,4 @@
-import { experts, getExpertBySlug, getAllExpertSlugs } from "../../data/mockdata"
+import { getExpertBySlug, getAllExpertSlugs } from "../../data/mockdata"
 
 export async function generateStaticParams() {
   const slugs = getAllExpertSlugs()
