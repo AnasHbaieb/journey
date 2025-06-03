@@ -19,15 +19,7 @@ export interface Expert {
   title: string
   photo: string
   about: string
-  phone: string
-  localPhone: string
-  email: string
-  socialMedia?: {
-    linkedin?: string
-    twitter?: string
-    github?: string
-    instagram?: string
-  }
+  category?: string[]
   studies: string[]
   achievements: string[]
   journey: JourneyStep[]
@@ -44,13 +36,7 @@ export const experts: Expert[] = [
     photo: "/images/linus-torvalds.jpg",
     about:
       "Linus Torvalds revolutionized computing by creating the Linux kernel, which powers most of the world's servers and Android devices. He later created the Git version control system, transforming software development workflows globally.",
-    phone: "+1-555-555-5555",
-    localPhone: "555-555-5555",
-    email: "linus@torvalds.com",
-    socialMedia: {
-      linkedin: "https://www.linkedin.com/in/linus-torvalds/",
-      twitter: "https://twitter.com/linustorvalds"
-    },
+    category: ["Programming"],
     studies: [
       "MSc in Computer Science – University of Helsinki",
       "Honorary Doctorate – Stockholm University",
@@ -151,13 +137,7 @@ export const experts: Expert[] = [
     photo: "/images/john-carmack.jpg",
     about:
       "John Carmack revolutionized computer graphics and game development through groundbreaking work at id Software. Creator of influential game engines including those powering Doom and Quake series. Currently working on AGI and VR technologies.",
-    phone: "+1-555-555-5555",
-    localPhone: "555-555-5555",
-    email: "john@carmack.com",
-    socialMedia: {
-      linkedin: "https://www.linkedin.com/in/john-carmack/",
-      twitter: "https://twitter.com/id_carmack"
-    },
+    category: ["Programming", "AI"],
     studies: [
       "Attended University of Missouri–Kansas City (dropped out)",
       "Two Emmy Awards for Technical Achievement",
@@ -258,13 +238,7 @@ export const experts: Expert[] = [
     photo: "/images/guido-van-rossum.jpg",
     about:
       "Guido van Rossum created Python in 1989, designing it as an easy-to-read language emphasizing code readability. Python has become one of the world's most popular programming languages, powering major platforms from Google to NASA.",
-    phone: "+1-555-555-5555",
-    localPhone: "555-555-5555",
-    email: "guido@vanrossum.com",
-    socialMedia: {
-      linkedin: "https://www.linkedin.com/in/guido-van-rossum-0a023b1/",
-      twitter: "https://twitter.com/gvanrossum"
-    },
+    category: ["Programming"],
     studies: [
       "MSc in Mathematics & Computer Science – University of Amsterdam",
       "Award for the Advancement of Free Software (2001)",
