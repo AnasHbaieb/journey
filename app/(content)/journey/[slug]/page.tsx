@@ -49,10 +49,10 @@ export default async function ExpertJourneyPage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50/50 via-white to-purple-50/50">
       <Header />
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 space-y-12">
         <HeroCard expert={expert} />
         <About expert={expert} />
         <Timeline journey={expert.journey} />
