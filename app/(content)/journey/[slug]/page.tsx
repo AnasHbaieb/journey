@@ -6,10 +6,8 @@ import About from "../components/About"
 import Timeline from "../components/Timeline"
 import Footer from "../components/Footer"
 
-interface PageProps {
-  params: { slug: string }
-}
 
+type Params = Promise<{ slug: string }>
 // Generate static params for all expert slugs
 export async function generateStaticParams() {
   const slugs = getAllExpertSlugs()
@@ -18,9 +16,12 @@ export async function generateStaticParams() {
   }))
 }
 
-// Generate metadata for SEO
-export async function generateMetadata({ params }: PageProps) {
-  const { slug } = params
+// Generate mocktadata for SEO
+export async function generateMetadata(props: {
+  params: Params
+}) {
+  const params = await props.params
+  const slug = params.slug
   const expert = getExpertBySlug(slug)
 
   if (!expert) {
@@ -40,8 +41,11 @@ export async function generateMetadata({ params }: PageProps) {
   }
 }
 
-export default async function ExpertJourneyPage({ params }: PageProps) {
-  const { slug } = params
+export default async function ExpertJourneyPage(props: {
+  params: Params
+}) {
+  const params = await props.params
+  const slug = params.slug
   const expert = getExpertBySlug(slug)
 
   if (!expert) {
