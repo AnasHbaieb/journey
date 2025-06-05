@@ -42,22 +42,30 @@ export default function SearchSection() {
   }, [searchTerm, selectedCategory, experts])
 
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4 rounded-xl shadow-lg mb-12">
-      <h1 className="text-5xl font-extrabold text-gray-900 mb-6 text-center leading-tight">Search for Experts</h1>
-      <p className="text-xl text-gray-700 mb-10 text-center max-w-3xl mx-auto leading-relaxed">
-        Explore a wide range of certified experts across various fields.
-      </p>
-
-      <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
-        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        <CategoryFilter 
-          selectedCategory={selectedCategory} 
-          setSelectedCategory={setSelectedCategory} 
-          availableCategories={availableCategories} 
-        />
+    <section className="max-w-7xl mx-auto px-4">
+      <div className="text-center mb-12">
+        <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
+          Find Your Expert Guide
+        </h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Discover industry experts who can guide you through their experiences and insights
+        </p>
       </div>
-      {/* Render the Result component here, passing filteredExperts */}
-      <Result filteredExperts={filteredExperts} />
+
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-12 backdrop-blur-sm bg-white/50">
+        <div className="flex flex-col md:flex-row gap-4">
+          <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          <CategoryFilter 
+            selectedCategory={selectedCategory} 
+            setSelectedCategory={setSelectedCategory} 
+            availableCategories={availableCategories} 
+          />
+        </div>
+      </div>
+
+      <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-100 shadow-lg">
+        <Result filteredExperts={filteredExperts} />
+      </div>
     </section>
   )
-} 
+}
