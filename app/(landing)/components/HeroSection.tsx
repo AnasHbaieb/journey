@@ -45,13 +45,13 @@ export default function HeroSection() {
             onChange={(e) => setHeroSearchTerm(e.target.value)}
             onKeyPress={(e) => {
               if (e.key === 'Enter') {
-                router.push(`/journey/search?search=${heroSearchTerm}`)
+                router.push(`/search?search=${heroSearchTerm}`)
               }
             }}
           />
           <button 
             className="ml-3 px-6 py-3 bg-purple-600 rounded-full text-white font-semibold hover:bg-purple-700 transition duration-300"
-            onClick={() => router.push(`/journey/search?search=${heroSearchTerm}`)}
+            onClick={() => router.push(`/search?search=${heroSearchTerm}`)}
           >
             Search
           </button>

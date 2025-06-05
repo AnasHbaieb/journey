@@ -1,4 +1,5 @@
 import React from "react"
+import { ChevronDown } from "lucide-react"
 
 interface CategoryFilterProps {
   selectedCategory: string;
@@ -18,4 +19,4 @@ export default function CategoryFilter({ selectedCategory, setSelectedCategory, 
       ))}
     </select>
   )
-} 
+}
