@@ -1,4 +1,5 @@
 'use client'
+import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Expert } from "../../data/mockdata"
@@ -9,8 +10,8 @@ interface ExpertCardProps {
 
 export default function ExpertCard({ expert }: ExpertCardProps) {
   return (
-    <div className="bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 flex flex-col items-center text-center">
-      <div className="w-20 h-20 rounded-full bg-gray-700 mb-4 overflow-hidden relative">
+    <div className="bg-white rounded-2xl p-7 shadow-xl border border-gray-100 flex flex-col items-center text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+      <div className="w-28 h-28 rounded-full bg-gray-50 mb-5 overflow-hidden relative border-4 border-blue-300 shadow-inner">
         {expert.photo ? (
           <Image
             src={expert.photo}
@@ -22,25 +23,25 @@ export default function ExpertCard({ expert }: ExpertCardProps) {
           <span className="text-gray-400 text-xl font-bold">Image</span>
         )}
       </div>
-      <h3 className="text-xl font-bold text-white mb-1">{expert.name}</h3>
-      <p className="text-purple-400 text-sm mb-3">{expert.title}</p>
-      <p className="text-gray-400 text-sm mb-6">{expert.about}</p>
-      <div className="flex justify-around w-full mb-6">
+      <h3 className="text-3xl font-extrabold text-gray-900 mb-2">{expert.name}</h3>
+      <p className="text-blue-700 text-lg mb-4 font-medium">{expert.title}</p>
+      <p className="text-gray-600 text-base mb-7 line-clamp-4 leading-relaxed">{expert.about}</p>
+      <div className="flex justify-around w-full mb-7 mt-auto">
         <div className="flex flex-col items-center">
-          <p className="text-lg font-bold text-blue-400">{expert.journey.length}+</p>
-          <p className="text-gray-400 text-xs">Journeys</p>
+          <p className="text-2xl font-bold text-blue-600">{expert.journey.length}+</p>
+          <p className="text-gray-500 text-sm">Journeys</p>
         </div>
         <div className="flex flex-col items-center">
-          <p className="text-lg font-bold text-green-400">{expert.achievements.length}</p>
-          <p className="text-gray-400 text-xs">Achievements</p>
+          <p className="text-2xl font-bold text-green-600">{expert.achievements.length}</p>
+          <p className="text-gray-500 text-sm">Achievements</p>
         </div>
         <div className="flex flex-col items-center">
-          <p className="text-lg font-bold text-yellow-400">{expert.studies.length}</p>
-          <p className="text-gray-400 text-xs">Studies</p>
+          <p className="text-2xl font-bold text-yellow-600">{expert.studies.length}</p>
+          <p className="text-gray-500 text-sm">Studies</p>
         </div>
       </div>
       <Link href={`/journey/${expert.slug}`}>
-        <button className="px-6 py-3 bg-purple-600 rounded-full text-white font-semibold hover:bg-purple-700 transition duration-300">
+        <button className="mt-5 px-10 py-4 bg-blue-600 rounded-full text-white font-bold text-lg hover:bg-blue-700 transition duration-300 shadow-lg transform hover:scale-105">
           Discover His Journey
         </button>
       </Link>

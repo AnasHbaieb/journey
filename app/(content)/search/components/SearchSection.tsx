@@ -42,13 +42,13 @@ export default function SearchSection() {
   }, [searchTerm, selectedCategory, experts])
 
   return (
-    <section className="mb-8">
-      <h1 className="text-4xl font-bold text-gray-900 mb-4 text-center">Search for Experts</h1>
-      <p className="text-lg text-gray-700 mb-8 text-center max-w-2xl mx-auto">
-        Explore a wide range of experts across various fields. Search by name or description, or browse by category.
+    <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-16 px-4 rounded-xl shadow-lg mb-12">
+      <h1 className="text-5xl font-extrabold text-gray-900 mb-6 text-center leading-tight">Search for Experts</h1>
+      <p className="text-xl text-gray-700 mb-10 text-center max-w-3xl mx-auto leading-relaxed">
+        Explore a wide range of certified experts across various fields.
       </p>
 
-      <div className="flex flex-col md:flex-row gap-4 mb-8">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
         <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <CategoryFilter 
           selectedCategory={selectedCategory} 
