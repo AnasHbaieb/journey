@@ -42,22 +42,28 @@ export default function SearchSection() {
   }, [searchTerm, selectedCategory, experts])
 
   return (
-    <section className="mb-8">
-      <h1 className="text-4xl font-bold text-gray-900 mb-4 text-center">Search for Experts</h1>
-      <p className="text-lg text-gray-700 mb-8 text-center max-w-2xl mx-auto">
-        Explore a wide range of experts across various fields. Search by name or description, or browse by category.
-      </p>
-
-      <div className="flex flex-col md:flex-row gap-4 mb-8">
-        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        <CategoryFilter 
-          selectedCategory={selectedCategory} 
-          setSelectedCategory={setSelectedCategory} 
-          availableCategories={availableCategories} 
-        />
+    <section className="max-w-7xl mx-auto">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          Find Your Expert Guide
+        </h1>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Discover industry experts who can guide you through their experiences and insights
+        </p>
       </div>
-      {/* Render the Result component here, passing filteredExperts */}
+
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
+        <div className="flex flex-col md:flex-row gap-4">
+          <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          <CategoryFilter 
+            selectedCategory={selectedCategory} 
+            setSelectedCategory={setSelectedCategory} 
+            availableCategories={availableCategories} 
+          />
+        </div>
+      </div>
+
       <Result filteredExperts={filteredExperts} />
     </section>
   )
-} 
+}
