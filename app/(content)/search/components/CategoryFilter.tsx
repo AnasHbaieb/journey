@@ -11,7 +11,7 @@ export default function CategoryFilter({ selectedCategory, setSelectedCategory, 
   return (
     <div className="relative">
       <select
-        className="appearance-none w-full md:w-48 pl-4 pr-10 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer transition duration-200"
+        className="appearance-none w-full md:w-56 pl-4 pr-10 py-4 rounded-xl border border-gray-200 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer transition duration-200 shadow-sm hover:border-gray-300"
         value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.target.value)}
       >

@@ -15,7 +15,7 @@ export default function SearchInput({ searchTerm, setSearchTerm }: SearchInputPr
       <input
         type="text"
         placeholder="Search for an expert or topic..."
-        className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+        className="w-full pl-12 pr-4 py-4 rounded-xl border border-gray-200 bg-white text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 shadow-sm hover:border-gray-300"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />

@@ -42,9 +42,9 @@ export default function SearchSection() {
   }, [searchTerm, selectedCategory, experts])
 
   return (
-    <section className="max-w-7xl mx-auto">
+    <section className="max-w-7xl mx-auto px-4">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
           Find Your Expert Guide
         </h1>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -52,7 +52,7 @@ export default function SearchSection() {
         </p>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-12 backdrop-blur-sm bg-white/50">
         <div className="flex flex-col md:flex-row gap-4">
           <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <CategoryFilter 
@@ -63,7 +63,9 @@ export default function SearchSection() {
         </div>
       </div>
 
-      <Result filteredExperts={filteredExperts} />
+      <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-100 shadow-lg">
+        <Result filteredExperts={filteredExperts} />
+      </div>
     </section>
   )
 }
