@@ -52,7 +52,7 @@ export default function SearchSection() {
         </p>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-12 backdrop-blur-sm bg-white/50">
+      <div className="rounded-2xl shadow-lg border border-gray-100 p-8 mb-12 backdrop-blur-sm bg-white/50">
         <div className="flex flex-col md:flex-row gap-4">
           <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           <CategoryFilter 
